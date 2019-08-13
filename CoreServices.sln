@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreServices", "CoreServices\CoreServices.csproj", "{F56CFC2E-363C-484D-826A-56B40177A018}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreServices.Test", "CoreServices.Test\CoreServices.Test.csproj", "{76B160AE-E4E4-4F29-B74F-A77F2F26373E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreServices.Test", "CoreServices.Test\CoreServices.Test.csproj", "{76B160AE-E4E4-4F29-B74F-A77F2F26373E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerService", "LoggerService\LoggerService.csproj", "{925AEF00-0B0F-4B77-9BB0-82FB064C12D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{76B160AE-E4E4-4F29-B74F-A77F2F26373E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76B160AE-E4E4-4F29-B74F-A77F2F26373E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76B160AE-E4E4-4F29-B74F-A77F2F26373E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{925AEF00-0B0F-4B77-9BB0-82FB064C12D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{925AEF00-0B0F-4B77-9BB0-82FB064C12D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{925AEF00-0B0F-4B77-9BB0-82FB064C12D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{925AEF00-0B0F-4B77-9BB0-82FB064C12D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

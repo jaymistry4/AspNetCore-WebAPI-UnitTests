@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-using CoreServices.Models;
+﻿using CoreServices.Models;
 using CoreServices.Repository;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
 namespace CoreServices.Controllers
 {
@@ -10,10 +10,10 @@ namespace CoreServices.Controllers
     [ApiController]
     public class PostController : ControllerBase
     {
-        IPostRepository postRepository;
+        private readonly IPostRepository _postRepository;
         public PostController(IPostRepository _postRepository)
         {
-            postRepository = _postRepository;
+            this._postRepository = _postRepository;
         }
 
         [HttpGet]
@@ -22,7 +22,7 @@ namespace CoreServices.Controllers
         {
             try
             {
-                var categories = await postRepository.GetCategories();
+                var categories = await _postRepository.GetCategories();
                 if (categories == null)
                 {
                     return NotFound();
@@ -43,7 +43,7 @@ namespace CoreServices.Controllers
         {
             try
             {
-                var posts = await postRepository.GetPosts();
+                var posts = await _postRepository.GetPosts();
                 if (posts == null)
                 {
                     return NotFound();
@@ -68,7 +68,7 @@ namespace CoreServices.Controllers
 
             try
             {
-                var post = await postRepository.GetPost(postId);
+                var post = await _postRepository.GetPost(postId);
 
                 if (post == null)
                 {
@@ -91,7 +91,7 @@ namespace CoreServices.Controllers
             {
                 try
                 {
-                    var postId = await postRepository.AddPost(model);
+                    var postId = await _postRepository.AddPost(model);
                     if (postId > 0)
                     {
                         return Ok(postId);
@@ -125,7 +125,7 @@ namespace CoreServices.Controllers
 
             try
             {
-                result = await postRepository.DeletePost(postId);
+                result = await _postRepository.DeletePost(postId);
                 if (result == 0)
                 {
                     return NotFound();
@@ -148,7 +148,7 @@ namespace CoreServices.Controllers
             {
                 try
                 {
-                    await postRepository.UpdatePost(model);
+                    await _postRepository.UpdatePost(model);
 
                     return Ok();
                 }

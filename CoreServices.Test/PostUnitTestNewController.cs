@@ -13,6 +13,10 @@ using Xunit;
 
 namespace CoreServices.Test
 {
+    /// <summary>
+    /// Unit testing of Post controller with database entries.
+    /// Optimized code.
+    /// </summary>
     public class PostUnitTestNewController
     {
         #region Properties
@@ -22,7 +26,6 @@ namespace CoreServices.Test
             .Options;
         private BlogDBContext _context => new BlogDBContext(DbContextOptions);
         private DummyDataDbInitializer _db => new DummyDataDbInitializer();
-        private readonly PostRepository _repository;
         private readonly PostController _controller;
 
         #endregion
@@ -32,8 +35,8 @@ namespace CoreServices.Test
         public PostUnitTestNewController()
         {
             InitializeDatabase();
-            _repository = new PostRepository(_context);
-            _controller = new PostController(_repository);
+            var repository = new PostRepository(_context);
+            _controller = new PostController(repository);
         }
 
         #endregion
