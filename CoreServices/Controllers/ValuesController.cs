@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using LoggerService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreServices.Controllers
@@ -7,11 +9,22 @@ namespace CoreServices.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private ILoggerManager _logger;
+
+        public ValuesController(ILoggerManager logger)
+        {
+            _logger = logger;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            _logger.LogInfo("Fetching all the Students from the storage");
+
+            throw new Exception("Exception while fetching all the students from the storage.");
+
+            //return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5

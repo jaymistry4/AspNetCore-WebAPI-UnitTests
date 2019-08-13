@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CoreServices.Test.Helpers
+﻿namespace CoreServices.Test.Helpers
 {
     public static class Constants
     {
